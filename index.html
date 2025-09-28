@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BO7 Guide</title>
+    
+    <!-- Meta tags for sharing -->
+    <meta property="og:title" content="𝗕𝗢𝟳 𝗘𝗮𝗿𝗹𝘆 𝗔𝗰𝗰𝗲𝘀𝘀 𝗚𝘂𝗶𝗱𝗲">
+    <meta property="og:description" content="𝘊𝘰𝘮𝘱𝘭𝘦𝘵𝘦 𝘎𝘶𝘪𝘥𝘦 𝘵𝘰 𝘨𝘦𝘵𝘵𝘪𝘯𝘨 𝘺𝘰𝘶𝘳 𝘍𝘳𝘦𝘦 𝘉𝘖7 𝘌𝘢𝘳𝘭𝘺 𝘈𝘤𝘤𝘦𝘴𝘴 𝘉𝘦𝘵𝘢 𝘊𝘰𝘥𝘦!">
+    <meta property="og:image" content="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="📚 𝙉𝙄𝙓𝙎𝙏𝘼𝙃 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮!" />
+    <meta name="theme-color" content="#ff5722" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0a05;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: url('assets/NIX1.png'), auto;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: rgba(26, 26, 26, 0.8); border-radius: 6px; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #ff5722, #ff9800, #ffc107); border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #ff7043, #ffb74d, #ffeb3b); }
+        html { scrollbar-color: #ff5722 rgba(26, 26, 26, 0.8); }
+        
+        /* Parallax Background */
+        .feature {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
+            background: url('https://pbs.twimg.com/media/G133o4MbUAAApxB?format=jpg&name=4096x4096') center center no-repeat;
+            background-size: 115%; background-attachment: fixed;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+        } 
+        /* https://www.google.com/url?sa=i&url=https%3A%2F%2Fx.com%2Fcallofduty&psig=AOvVaw3Kv-p9FYseFRij1S0K48IC&ust=1759178607969000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCIjk4pKp_I8DFQAAAAAdAAAAABAV */
+        
+        .feature::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 50%, rgba(10,10,10,0.95) 100%);
+        }
+        
+        /* Header Section */
+        .hero-section {
+            position: relative; height: 125vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center; z-index: 1; padding: 2rem;
+        }
+        
+        .logo-overlay {
+            position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);
+            width: 132px; height: 132px; background: rgba(0,0,0,0.8); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 30px rgba(255, 86, 34, 0.614);
+        }
+        
+        .logo-image { width: 130px; height: 130px; object-fit: contain; filter: brightness(.85); }
+        
+        .main-title {
+            font-family: 'Orbitron', monospace; font-size: 3.6rem; font-weight: 900;
+            background: linear-gradient(45deg, #ff5722, #ff9800, #ffc107);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            text-transform: uppercase; letter-spacing: 1.35px;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .nav-buttons {
+            display: flex; gap: 1.0rem; flex-wrap: wrap; justify-content: center;
+            margin-bottom: 2.6rem; width: 100%; max-width: 900px; cursor: url('assets/GUNCUR.png'), auto
+        }
+        
+        .nav-btn {
+            padding: 1rem 2rem; background: linear-gradient(135deg, #1a1a1a, #333);
+            border: 2px solid #ff5722; border-radius: 25px; color: #ffffff;
+            text-decoration: none; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; position: relative; overflow: hidden; cursor: url('assets/GUNCUR.png'), auto;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.2);
+        }
+        
+        .nav-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-btn:hover::before { left: 100%; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4); border-color: #ffc107; }
+        
+        /* Content Section */
+        .content {
+            position: relative; z-index: 2;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.475) 0%, rgba(10, 10, 10, 0.438) 10%);
+            padding: 4rem 2rem; min-height: 100vh;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace; font-size: 3.5rem; color: #ff5722;
+            text-align: center; margin-bottom: 3rem; position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 3px; background: linear-gradient(90deg, #ff5722, #ffc107); border-radius: 2px;
+        }
+        
+        /* Accordion Styles */
+        .accordion { display: grid; gap: 1.5rem; margin: 2rem 0; }
+        
+        .accordion-item {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(51, 51, 51, 0.9));
+            border: 2px solid rgba(255, 87, 34, 0.3); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            border-color: #ff5722; transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 87, 34, 0.2);
+        }
+        
+        .accordion-header {
+            padding: 2rem; cursor: url('assets/GUNCUR.png'), auto; position: relative;
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(255, 193, 7, 0.1));
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 193, 7, 0.2));
+        }
+        
+        .accordion-title {
+            font-family: 'Orbitron', monospace; font-size: 1.4rem; font-weight: 700;
+            color: #ffc107; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .accordion-summary { font-size: 1rem; color: #cccccc; line-height: 1.5; }
+        
+        .accordion-icon {
+            position: absolute; top: 50%; right: 2rem; transform: translateY(-50%);
+            font-size: 2rem; color: #ff5722; transition: transform 0.3s ease;
+        }
+        
+        .accordion-header.active .accordion-icon { transform: translateY(-50%) rotate(45deg); }
+        
+        .accordion-body {
+            padding: 0 2rem 2rem; max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .accordion-body.active { max-height: 1000px; padding: 2rem; }
+        
+        .accordion-content h4 { color: #ff5722; margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; }
+        .accordion-content p { margin-bottom: 1rem; color: #e0e0e0; line-height: 1.8; }
+        .accordion-content ol, .accordion-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .accordion-content li { margin-bottom: 0.5rem; color: #e0e0e0; }
+        
+        .highlight {
+            background: linear-gradient(90deg, rgba(255, 87, 34, 0.2), rgba(255, 193, 7, 0.2));
+            padding: 0.2rem 0.4rem; border-radius: 5px; font-weight: 600;
+        }
+        
+        /* Media Player */
+        .media-player {
+            position: fixed; top: 15px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(51, 51, 51, 0.95));
+            backdrop-filter: blur(10px); border: 2.px solid rgba(255, 87, 34, 0.3);
+            border-radius: 12px; padding: 4px 8px; display: flex; align-items: center;
+            gap: 8px; z-index: 1001; min-width: 180px; max-width: 220px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 87, 34, 0.2);
+        }
+        
+        .media-player:hover {
+            border-color: #ff5722; transform: translateX(-50%) translateY(-2px); cursor: url('assets/GUNCUR.png'), auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 87, 34, 0.3);
+        }
+        
+        .play-pause-btn {
+            width: 26px; height: 26px; border: none; background: linear-gradient(135deg, #ff5722, #ff9800);
+            border-radius: 50%; color: white; font-size: 18px; cursor: pointer; position: .5px -2px; 
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        
+        .track-info { flex: 1; min-width: 0; }
+        .track-title { font-family: 'Orbitron', monospace; font-size: 8px; font-weight: 600; color: #ffc107; }
+        .track-artist { font-size: 7px; color: #cccccc; }
+        
+        .volume-container { display: flex; align-items: center; gap: 5px; }
+        .mute-btn { width: 18px; height: 18px; border: 1px solid rgba(255, 87, 34, 0.5); border-radius: 3px; color: #ff5722; font-size: 8px; cursor: pointer; }
+        .volume-slider { width: 35px; height: 2px; background: rgba(255, 255, 255, 0.2); }
+        
+        .progress-container {
+            position: absolute; bottom: -2px; left: 9px; right: 9px; height: 3px;
+            background: rgba(255, 255, 255, 0.1); border-radius: 0 0 11px 11px; overflow: hidden;
+        }
+        .progress-bar { height: 100%; background: linear-gradient(90deg, #ff5722, #ffc107); width: 0%; }
+        
+        /* Countdown Timer */
+        .countdown-container {
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 60px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(51, 51, 51, 0.95));
+            backdrop-filter: blur(10px); border-top: 2px solid rgba(255, 87, 34, 0.5);
+            z-index: 999; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 87, 34, 0.2);
+        }
+        
+        .countdown-wrapper {
+            position: relative; width: 100%; max-width: 1200px; height: 100%;
+            display: flex; align-items: center; justify-content: center; padding: 0 2rem;
+        }
+        
+        .countdown-progress {
+            position: absolute; bottom: 0; left: 50%; height: 4px;
+            background: linear-gradient(90deg, #ff5722, #ffc107); border-radius: 2px 2px 0 0;
+            transition: all 1s ease; box-shadow: 0 0 8px rgba(255, 87, 34, 0.6);
+            transform: translateX(-50%);
+        }
+        
+        .countdown-content { display: flex; align-items: center; gap: 2rem; z-index: 1; }
+        
+        .countdown-label {
+            font-family: 'Orbitron', monospace; font-size: 1rem; font-weight: 600;
+            color: #ffc107; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
+        }
+        
+        .countdown-timer { display: flex; gap: 1.5rem; align-items: center; }
+        .countdown-unit { text-align: center; position: relative; }
+        
+        .countdown-number {
+            font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; color: #ffffff;
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 193, 7, 0.2));
+            border: 1px solid rgba(255, 87, 34, 0.5); border-radius: 8px;
+            padding: 0rem 0.2rem; min-width: 35px; display: block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .countdown-label-unit {
+            font-family: 'Rajdhani', sans-serif; font-size: 0.7rem; color: #cccccc;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.15rem; font-weight: 500;
+        }
+        
+        .countdown-separator {
+            font-family: 'Orbitron', monospace; font-size: 1.2rem; color: #ff5722;
+            font-weight: 700; animation: blink 2s infinite; position: relative; top: -10px; padding: -1rem;
+        }
+        
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.3; } }
+        
+        /* Footer */
+        .footer {
+            text-align: center; padding: 2rem 2rem 5rem 2rem;
+            background: rgba(0, 0, 0, 0.8); border-top: 1px solid rgba(255, 87, 34, 0.3);
+            font-size: 0.9rem; color: #88888870;
+        }
+        
+        .legal-link { color: #ff5722; text-decoration: none; cursor: pointer; transition: color 0.3s ease; }
+        .legal-link:hover { color: #ffc107; text-decoration: underline; }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px);
+            display: none; justify-content: center; align-items: center;
+            z-index: 2000; opacity: 0; transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.active { display: flex; opacity: 1; }
+        
+        .modal-container {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(51, 51, 51, 0.98));
+            border: 2px solid #ff5722; border-radius: 20px; max-width: 800px; max-height: 80vh;
+            width: 90%; margin: 2rem; overflow: hidden; transform: scale(0.8);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 87, 34, 0.3);
+        }
+        
+        .modal-overlay.active .modal-container { transform: scale(1); }
+        
+        .modal-header {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 193, 7, 0.2));
+            padding: 2rem; border-bottom: 1px solid rgba(255, 87, 34, 0.3);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        
+        .modal-title {
+            font-family: 'Orbitron', monospace; font-size: 2rem; font-weight: 700;
+            color: #ffc107; margin: 0; text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .modal-close {
+            background: none; border: none; color: #ff5722; font-size: 2.5rem;
+            cursor: url('assets/GUNCUR.png'), auto; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; line-height: 1;
+        }
+        
+        .modal-close:hover { background: rgba(255, 87, 34, 0.2); color: #ffc107; transform: rotate(90deg); }
+        
+        .modal-body { padding: 2rem; max-height: 60vh; overflow-y: auto; }
+        
+        .legal-content h4 {
+            font-family: 'Orbitron', monospace; color: #ff5722; font-size: 1.3rem;
+            font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .legal-content p { color: #e0e0e0; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1rem; }
+        .legal-content ul { margin: 1.5rem 0; padding-left: 2rem; }
+        .legal-content li { color: #e0e0e0; line-height: 1.8; margin-bottom: 0.8rem; }
+        .legal-content strong { color: #ffc107; }
+        .email-link { color: #ff5722; text-decoration: none; }
+        .email-link:hover { color: #ffc107; text-decoration: underline; }
+        
+        /* Scroll indicator */
+        .scroll-indicator { position: fixed; top: 0; left: 0; width: 100%; height: 12px; background: rgba(255, 87, 34, 0.2); z-index: 1000; }
+        .scroll-progress { height: 100%; background: linear-gradient(90deg, #ff5722, #ffc107); width: 0%; }
+        
+        /* Animations */
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 20px rgba(255, 87, 34, 0.5); transform: scale(1); }
+            to { text-shadow: 0 0 40px rgba(255, 87, 34, 0.8), 0 0 60px rgba(255, 193, 7, 0.4); transform: scale(1.08); }
+        }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-100px); } to { opacity: 1; transform: translateX(0); } }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.2rem; }
+            .logo-overlay { width: 90px; height: 90px; }
+            .logo-image { width: 110px; height: 110px; }
+            .nav-btn { font-size: 0.85rem; padding: 0.8rem 1.5rem; }
+            .section-title { font-size: 2.5rem; }
+            .accordion-header { padding: 1.5rem; }
+            .accordion-title { font-size: 1.2rem; }
+            .accordion-icon { right: 1.5rem; }
+            .content { padding: 2rem 1rem; }
+            .media-player { min-width: 160px; max-width: 180px; top: 10px; }
+            .countdown-container { height: 50px; }
+            .countdown-content { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .countdown-label { font-size: 0.8rem; flex-basis: 100%; text-align: center; margin-bottom: 0.3rem; }
+            .countdown-timer { gap: 0.8rem; }
+            .countdown-number { font-size: 1rem; padding: 0.2rem 0.4rem; min-width: 35px; }
+            .countdown-label-unit { font-size: 0.6rem; }
+            .countdown-separator { font-size: 1rem; }
+            .modal-container { width: 95%; margin: 1rem; }
+            .modal-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="feature"></div>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-banner">
+            <div class="logo-overlay">
+                <img src="https://r2.fivemanage.com/uxB3VmDFBtzQJnlmSL9hB/output-onlinegiftools(2).gif" alt="Logo" class="logo-image">
+            </div>
+        </div>
+        
+        <h1 class="main-title">Black Ops 7<br>Early Access Beta Guide</h1>
+        
+        <div class="nav-buttons">
+            <a href="https://www.callofduty.com/blog/2025/09/call-of-duty-black-ops-7-multiplayer-deep-dive#COD" target="_blank" class="nav-btn">COD NEXT 2025</a>
+            <a href="https://twitch.tv/NIXSTAH" target="_blank" class="nav-btn">TWITCH</a>
+            <a href="https://www.twitch.tv/drops/inventory" target="_blank" class="nav-btn">Twitch Drops</a>
+            <a href="https://discord.gg/NIXSTAH" target="_blank" class="nav-btn">DISCORD</a>
+            <a href="https://support.activision.com/articles/call-of-duty-viewership-rewards" target="_blank" class="nav-btn">Activision Help</a>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <div class="container">
+            <h2 class="section-title">How to Earn Your Beta Code</h2>
+            
+            <div class="accordion">
+                <!-- Account Linking -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Step 1: Link Your Accounts</h3>
+                        <p class="accordion-summary">Connect your Twitch and Activision accounts to start earning rewards</p>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <h4>Account Linking Requirements</h4>
+                            <p>To participate in the Black Ops 7 Early Access Beta program, you must link your Twitch account to your Activision account. This connection allows you to earn Twitch Drops while watching eligible streams.</p>
+                            
+                            <h4>Step-by-Step Linking Process:</h4>
+                            <ol>
+                                <li>Open your web browser and sign in to your <span class="highlight">Twitch account</span></li>
+                                <li>In the same browser window/tab, sign in to your <span class="highlight">Activision account</span> (must be on PC)</li>
+                                <li>Navigate to the Account Linking section in your Activision account settings</li>
+                                <li>Select <span class="highlight">"Link with Twitch Account"</span> and continue</li>
+                                <li>You'll be redirected back to Twitch to complete the authorization process</li>
+                                <li>Confirm the link by checking both accounts show the connection</li>
+                            </ol>
+                            
+                            <p><strong>Important:</strong> Both accounts must be logged in within the same browser for the linking process to work correctly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Watch Time -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Step 2: Watch Eligible Streams</h3>
+                        <p class="accordion-summary">Watch participating streamers for required time to earn drops</p>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <h4>Watch Time Requirements</h4>
+                            <p>To earn your Black Ops 7 Early Access Beta Code, you must watch eligible streamers on Twitch for a minimum of <span class="highlight">one continuous hour</span>.</p>
+                            
+                            <h4>How to Participate:</h4>
+                            <ul>
+                                <li>Look for streams with the <span class="highlight">"Drops Enabled"</span> indicator</li>
+                                <li>This callout confirms you're officially earning progress toward rewards</li>
+                                <li>Watch time must be continuous - switching streams may reset your progress</li>
+                                <li>Ensure you're logged into both Twitch and have linked accounts</li>
+                                <li>Stream must be live (not VODs or reruns) to count toward watch time</li>
+                            </ul>
+                            
+                            <h4>Tracking Your Progress</h4>
+                            <p>You can monitor your drop progress through your Twitch account. Look for the drops notification that will appear when you've met the time requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Claiming Rewards -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Step 3: Claim Your Rewards</h3>
+                        <p class="accordion-summary">Collect and activate your earned beta codes and rewards</p>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <h4>Reward Claiming Process</h4>
+                            <p>Once you've completed the required watch time, you'll need to manually claim your rewards through Twitch.</p>
+                            
+                            <h4>Claiming Steps:</h4>
+                            <ol>
+                                <li>Go to your <span class="highlight">Twitch Inventory</span> (accessible through your profile menu)</li>
+                                <li>Find your earned Black Ops 7 Beta drop</li>
+                                <li>Click <span class="highlight">"Claim"</span> to activate the reward</li>
+                                <li>You have <span class="highlight">48 hours</span> from earning to claim the drop</li>
+                            </ol>
+                            
+                            <h4>In-Game Activation</h4>
+                            <ul>
+                                <li>Claimed rewards may take up to <span class="highlight">24 hours</span> to appear in-game</li>
+                                <li>Restart your game client if rewards don't appear immediately</li>
+                                <li>Check your email for beta code delivery (if applicable)</li>
+                                <li>Verify your beta access through your game library or platform</li>
+                            </ul>
+                            
+                            <h4>Missing Rewards?</h4>
+                            <p>If earned rewards are missing, they can be restored up to <span class="highlight">14 days after the program ends</span>. Contact Activision support with your account details and proof of participation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eligibility -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Eligibility & Requirements</h3>
+                        <p class="accordion-summary">Who can participate and what accounts are needed</p>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-content">
+                            <h4>Participation Requirements</h4>
+                            <p>All players who meet the following criteria are eligible to participate in the Black Ops 7 Early Access Beta program:</p>
+                            
+                            <h4>Required Accounts:</h4>
+                            <ul>
+                                <li><span class="highlight">Activision Account</span> - Free to create if you don't have one</li>
+                                <li><span class="highlight">Twitch Account</span> - Must be linked to your Activision account</li>
+                                <li><span class="highlight">Gaming Platform Account</span> - Connected to Activision (PlayStation, Xbox, Battle.net, Steam)</li>
+                            </ul>
+                            
+                            <h4>Account Setup:</h4>
+                            <ol>
+                                <li>Create accounts if you don't already have them</li>
+                                <li>Link your Twitch account to Activision</li>
+                                <li>Ensure your gaming platform is connected to Activision</li>
+                                <li>Verify all connections are active before participating</li>
+                            </ol>
+                            
+                            <p><strong>Note:</strong> YouTube integration may also be available for certain regions and promotions. Check official Activision communications for the most current platform support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <div class="countdown-wrapper">
+            <div class="countdown-progress" id="countdownProgress"></div>
+            <div class="countdown-content">
+                <div class="countdown-label">Black Ops 7 Reveal</div>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="days">00</span>
+                        <div class="countdown-label-unit">Days</div>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="hours">00</span>
+                        <div class="countdown-label-unit">Hours</div>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <div class="countdown-label-unit">Minutes</div>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-unit">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <div class="countdown-label-unit">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Media Player -->
+    <div class="media-player">
+        <audio id="audioPlayer" preload="auto" loop>
+            <source src="assets/they-dont-know-about-me.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <button class="play-pause-btn" id="playPauseBtn">
+            <span id="playIcon">▶</span>
+        </button>
+        
+        <div class="track-info">
+            <div class="track-title" id="trackTitle">They Don't Know About Me</div>
+            <div class="track-artist" id="trackArtist">Black Perez</div>
+        </div>
+        
+        <div class="volume-container">
+            <button class="mute-btn" id="muteBtn">🔊</button>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="15">
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 NIXSTAH™ | <span id="legalLink" class="legal-link">Legal Disclaimer</span></p>
+    </footer>
+    
+    <!-- Legal Modal -->
+    <div class="modal-overlay" id="legalModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Legal Disclaimer</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="legal-content">
+                    <h4>LEGAL:</h4>
+                    <p>This website is an independent, fan-created project and is not affiliated with, endorsed by, or sponsored by Activision Publishing, Inc., Twitch Interactive, Inc., or any of their subsidiaries, partners, or affiliates.</p>
+                    
+                    <p>All trademarks, service marks, logos, product names, and brand names used on this website are the property of their respective owners.</p>
+                    
+                    <ul>
+                        <li><strong>"Call of Duty"</strong> and all associated images, logos, and assets are trademarks of Activision Publishing, Inc.</li>
+                        <li><strong>"Twitch,"</strong> the Twitch logo, and related marks are trademarks of Twitch Interactive, Inc.</li>
+                    </ul>
+                    
+                    <p>The use of these names and marks is for reference purposes only and does not imply any endorsement, sponsorship, or affiliation.</p>
+                    
+                    <p>If you are the owner of any content used on this website and wish to request its removal or modification, please contact <a href="mailto:officermills641@gmail.com" class="email-link">Officer Mills</a> directly, and we will address the matter promptly.</p>
+                    
+                    <p><strong>This website is provided for informational and entertainment purposes only. All rights reserved by their respective owners.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Parallax Background Effect
+        $(function(){
+            zoom = $('.feature').css('background-size');
+            zoom = parseFloat(zoom)/100;
+            size = zoom * $('.feature').width();
+            
+            $(window).on('scroll', function(){
+                fromTop = $(window).scrollTop();
+                newSize = size - (fromTop/3);
+                
+                if (newSize > $('.feature').width()) {
+                    $('.feature').css({
+                        '-webkit-background-size': newSize + 'px',
+                        '-moz-background-size': newSize + 'px',
+                        '-o-background-size': newSize + 'px',
+                        'background-size': newSize + 'px',
+                        '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
+                        'opacity': 1 - ((fromTop / $(document).height()) * 1.3)
+                    });
+                }
+            });
+        });
+        
+        // Browser compatibility for parallax
+        $(function (){
+            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+
+            if (isChrome || isSafari) {
+                // Chrome and Safari handle the effect natively
+            } else {
+                $('.feature').append('<div class="opaque"></div>');
+                $(window).on('scroll', function(){
+                    var opacity = 0 + ($(window).scrollTop()/5000);
+                    $('.opaque').css('opacity', opacity);
+                });
+            }
+        });
+        
+        // Accordion functionality
+        $(document).ready(function() {
+            $('.accordion-header').click(function() {
+                const $header = $(this);
+                const $body = $header.next('.accordion-body');
+                const $item = $header.parent();
+                
+                // Close other accordions
+                $('.accordion-item').not($item).find('.accordion-header').removeClass('active');
+                $('.accordion-item').not($item).find('.accordion-body').removeClass('active');
+                
+                // Toggle current accordion
+                $header.toggleClass('active');
+                $body.toggleClass('active');
+            });
+        });
+        
+        // Scroll progress bar
+        $(window).scroll(function() {
+            const scrolled = $(window).scrollTop();
+            const total = $(document).height() - $(window).height();
+            const progress = (scrolled / total) * 100;
+            $('.scroll-progress').css('width', progress + '%');
+        });
+        
+       // Countdown Timer Functionality
+$(document).ready(function() {
+    // Target date: September 30th, 2025 at 9:00 AM PDT
+    const targetDate = new Date('September 30, 2025 09:00:00 PDT').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        if (distance < 0) {
+            // Event has started
+            $('#countdownTimer').html('<div class="countdown-unit"><span class="countdown-number" style="color: #ffc107;">NOW LIVE AT COD: NEXT!</span></div>');
+            $('#countdownProgress').css('width', '0%');
+            clearInterval(countdownInterval);
+            return;
+        }
+        
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Update display with zero-padding
+        $('#days').text(days.toString().padStart(2, '0'));
+        $('#hours').text(hours.toString().padStart(2, '0'));
+        $('#minutes').text(minutes.toString().padStart(2, '0'));
+        $('#seconds').text(seconds.toString().padStart(2, '0'));
+        
+        // Calculate progress bar - use a fixed reference point for consistent calculation
+        const originalStartDate = new Date('2025-09-28 00:00:00').getTime(); // Set a fixed start reference
+        const totalDuration = targetDate - originalStartDate;
+        const elapsed = now - originalStartDate;
+        const progressPercent = Math.max(0, Math.min(100, (elapsed / totalDuration) * 100));
+        
+        // For a countdown bar that empties as time runs out
+        const remainingPercent = 100 - progressPercent;
+        $('#countdownProgress').css('width', remainingPercent + '%');
+        
+        console.log(`Progress: ${progressPercent.toFixed(1)}%, Remaining: ${remainingPercent.toFixed(1)}%`); // Debug line
+    }
+    
+    // Update countdown immediately and then every second
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+});
+        
+        // Media Player Functionality
+        $(document).ready(function() {
+            const audio = $('#audioPlayer')[0];
+            const playPauseBtn = $('#playPauseBtn');
+            const playIcon = $('#playIcon');
+            const muteBtn = $('#muteBtn');
+            const volumeSlider = $('#volumeSlider');
+            const progressBar = $('#progressBar');
+            
+            // Set initial volume to 15%
+            audio.volume = 0.0015;
+            
+            // Auto-play when page loads (with user interaction fallback)
+            setTimeout(() => {
+                audio.play().catch(e => {
+                    console.log('Autoplay prevented. User interaction required.');
+                    playPauseBtn.css('animation', 'pulse 2s infinite');
+                });
+            }, 1500);
+            
+            // Play/Pause functionality
+            playPauseBtn.click(function() {
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.text('⏸');
+                    playPauseBtn.css('animation', 'none');
+                } else {
+                    audio.pause();
+                    playIcon.text('▶');
+                }
+            });
+            
+            // Mute functionality
+            muteBtn.click(function() {
+                if (audio.muted) {
+                    audio.muted = false;
+                    muteBtn.text('🔊').removeClass('muted');
+                    volumeSlider.prop('disabled', false);
+                } else {
+                    audio.muted = true;
+                    muteBtn.text('🔇').addClass('muted');
+                    volumeSlider.prop('disabled', true);
+                }
+            });
+            
+            // Volume control
+            volumeSlider.on('input', function() {
+                const sliderValue = $(this).val();
+                const actualVolume = Math.min(sliderValue * 0.05 / 100, 0.25);
+                audio.volume = actualVolume;
+                
+                if (actualVolume === 0) {
+                    muteBtn.text('🔇');
+                } else if (actualVolume < 0.25) {
+                    muteBtn.text('🔉');
+                } else {
+                    muteBtn.text('🔊');
+                }
+            });
+            
+            // Progress bar update
+            audio.addEventListener('timeupdate', function() {
+                if (audio.duration) {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressBar.css('width', progress + '%');
+                }
+            });
+            
+            // Handle audio events
+            audio.addEventListener('play', function() {
+                playIcon.text('⏸');
+            });
+            
+            audio.addEventListener('pause', function() {
+                playIcon.text('▶');
+            });
+            
+            audio.addEventListener('ended', function() {
+                playIcon.text('▶');
+                progressBar.css('width', '0%');
+            });
+        });
+        
+        // Modal functionality
+        $(document).ready(function() {
+            const modal = $('#legalModal');
+            const legalLink = $('#legalLink');
+            const modalClose = $('#modalClose');
+            
+            // Open modal
+            legalLink.click(function(e) {
+                e.preventDefault();
+                modal.addClass('active');
+                $('body').css('overflow', 'hidden');
+            });
+            
+            // Close modal - close button
+            modalClose.click(function() {
+                modal.removeClass('active');
+                $('body').css('overflow', 'auto');
+            });
+            
+            // Close modal - click outside
+            modal.click(function(e) {
+                if (e.target === this) {
+                    modal.removeClass('active');
+                    $('body').css('overflow', 'auto');
+                }
+            });
+            
+            // Close modal - escape key
+            $(document).keydown(function(e) {
+                if (e.key === 'Escape' && modal.hasClass('active')) {
+                    modal.removeClass('active');
+                    $('body').css('overflow', 'auto');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

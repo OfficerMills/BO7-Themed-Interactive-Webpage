@@ -1,5 +1,7 @@
 # Call of Duty: Black Ops 7 Themed Webpage
 
+> [Deploy on Cloudflare Pages](https://community.cloudflare.com/t/how-to-deploy-pure-static-html-and-css-site-to-cloudflare-pages/255733)
+
 <p align="center">
   <img src="https://i.imgur.com/Rw6xhMA.png" alt="One World RP Logo">
 </p>
